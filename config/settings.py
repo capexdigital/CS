@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pdf_storage.apps.PdfStorageConfig',
+    'storage.apps.StorageConfig',
 
 ]
 

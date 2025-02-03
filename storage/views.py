@@ -10,7 +10,7 @@ def pdf_list(request):
     else:
         results = PDFFile.objects.all()
         
-    return render(request, 'pdf_storage/list.html', {
+    return render(request, 'storage/list.html', {
         'categories': categories,
         'results': results,
         'query': query
