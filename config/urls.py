@@ -6,6 +6,7 @@ from storage import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.pdf_list, name='pdf_list'),
-    path('upload/', views.upload_pdf, name='upload_pdf'),  # URL pattern for upload
+    path('', views.bookstore, name='bookstore'),
+    path('pdfs/', views.pdf_list, name='pdf_list'),
+    path('upload/', views.upload_pdf, name='upload_pdf'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

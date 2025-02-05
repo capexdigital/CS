@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CS</title>
+</head>
+<body>
+    <h1>CS</h1>
+    <div>
+        {% for category in categories %}
+            <h2>{{ category.name }}</h2>
+            <ul>
+                {% for pdf in pdf_files %}
+                    {% if pdf.category == category %}
+                        <li>
+                            <a href="{{ pdf.file.url }}">{{ pdf.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+</body>
+</html>

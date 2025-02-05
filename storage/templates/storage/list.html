@@ -1,44 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PDF List</title>
 </head>
-<body class="bg-gray-100 p-8">
-    <div class="max-w-7xl mx-auto">
-        <!-- Header -->
-        <div class="flex justify-between items-center mb-8">
-            <h1 class="text-3xl font-bold">CS</h1>
-            <a href="{% url 'upload_pdf' %}" 
-               class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                Add PDF
-            </a>
-        </div>
-
-        <!-- Search Bar -->
-        <form class="mb-8" method="get" action="{% url 'pdf_list' %}">
-            <input type="text" 
-                   name="q" 
-                   placeholder="Search PDFs..." 
-                   value="{{ query }}" 
-                   class="border p-2 rounded w-full">
-            <button type="submit" 
-                    class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mt-2">
-                Search
-            </button>
-        </form>
-
-        <!-- PDF List -->
-        <div>
-            {% for pdf in results %}
-                <div class="bg-white p-4 rounded shadow mb-4">
-                    <h2 class="text-xl font-semibold">{{ pdf.title }}</h2>
-                    <!-- Add more PDF details as needed -->
-                </div>
-            {% empty %}
-                <p>No PDFs found.</p>
-            {% endfor %}
-        </div>
-    </div>
-</body>
-</html>
+<body>
+    <h1>PDF List</h1>
+    <form method="GET" action="{% url 'pdf_list' %}">
+<head>
+    <title>PDF List</title>
+</head>
+<body>
+    <h1>PDF List</h1>
+    <form method="GET" action="{% url 'pdf_list' %}">

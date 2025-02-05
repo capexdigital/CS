@@ -24,22 +24,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u!w5az!!5p6%eiqez5kqb)j086fsq_mnh7s)4uafio@v%ifg8l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [False]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storage.apps.PdfStorageConfig',
-
 ]
 
 MIDDLEWARE = [
