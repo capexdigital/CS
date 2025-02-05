@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import PDFCategory, PDFFile
 
 def pdf_list(request):
@@ -15,3 +15,13 @@ def pdf_list(request):
         'results': results,
         'query': query
     })
+
+def upload_pdf(request):
+    if request.method == "POST":
+        # Process the uploaded PDF file:
+        # For example, you might use a form to handle file uploads.
+        # After processing, redirect to the PDF list or show a success message.
+        return redirect('pdf_list')
+    else:
+        # Render a template with an upload form
+        return render(request, 'storage/upload.html')
