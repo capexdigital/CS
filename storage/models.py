@@ -9,7 +9,7 @@ class PDFCategory(models.Model):
 
 class PDFFile(models.Model):
     title = models.CharField(max_length=200)
-    category = models.ForeignKey(PDFCategory, on_delete=models.CASCADE)
+    category = models.ForeignKey(PDFCategory, on_delete=models.CASCADE, related_name='pdfs')
     file = models.FileField(upload_to='pdfs/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
