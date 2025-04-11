@@ -1,4 +1,4 @@
-# EMPRESA X
+#EMPRESA X
 print('Bem-vindo a Loja do João Paulo Ferreira')
 
 # Loop para input de valor
