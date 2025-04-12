@@ -20,27 +20,47 @@ def cadastrar_livro(id_global):
         listaLivro.append(str(input('Nome:')))
         listaLivro.append(str(input('Autor:')))
         listaLivro.append(str(input('Editora:')))
-        livro.append(listaLivro[:])
         id_global = id_global + 1
+        livro.append(listaLivro[:])
         livro.clear()
         print('\n')
         print(f'id - {id_global}')
         print(listaLivro)
-        print(menu)
+        res = input('Deseja fazer mais um cadastro? [S/N]')
+        if res in 'Nn':
+            print(listaLivro)
+            break
+        else:
+            cadastrar_livro(id_global)
         break
 
+
+#Consultar Livro
+def consultar_livro():
+    print('consultar')
+        
+
+# Remover Livro
+def remover_livro():
+    print('remover')
+
+# Sair 
+def sair():
+    print('sair')
+    
 # Loop para escolha de opções do menu
 while True:
     EscolhaMenu = int(input("Selecione a opção desejada:"))
     if EscolhaMenu == 1:
         cadastrar_livro(id_global)
     elif EscolhaMenu == 2:
-        print('2')
-    break
-
-
-#Consultar Livro
-    #def consultar_livro():
+        consultar_livro()
+    elif EscolhaMenu == 3:
+        remover_livro()
+    elif EscolhaMenu == 4:
+        sair()
+    else:
+        print('Error')
 
 
 #Consultar Todos 
@@ -50,7 +70,5 @@ while True:
 #Consultar por Autor
 
 #Retornar ao menu
-
-#Remover Livro
 
 #Encerrar Programa
