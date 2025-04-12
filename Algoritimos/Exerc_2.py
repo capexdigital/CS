@@ -1,8 +1,14 @@
 # GELADOS JPF
+print('\n')
 print('Bem-vindo a Loja de Gelados do João Paulo Ferreira\n')
-print('--- MENU ---')
-print('AC - Açai')
-print('CP - Cupuaçu\n')
+menu = '-' * 10 + 'MENU' + '-' * 15
+print(menu)
+print('\n')
+sabor_1 = '-' * 2 + '(AC)-Açaí' + '-' * 18
+print(sabor_1)
+sabor_2 =  '-' * 2 + '(CP)-Cupuaçu' + '-' * 15
+print(sabor_2)
+print('\n')
 
 total = 0
 
@@ -31,13 +37,13 @@ while True:
     elif tamanho in ['p', 'P'] and sabor in ['CP', 'cp']:
         print('\nCUPUAÇU PEQUENO\n')
     elif tamanho in ['m', 'M'] and sabor in ['AC', 'ac']:
-        print('AÇAI MÉDIO')
+        print('\nAÇAI MÉDIO\n')
     elif tamanho in ['m', 'M'] and sabor in ['CP', 'cp']:
-        print('CUPUAÇU MÉDIO')
+        print('\nCUPUAÇU MÉDIO\n')
     elif tamanho in ['g', 'G'] and sabor in ['AC', 'ac']:
-        print('AÇAI GRANDE')
+        print('\nAÇAI GRANDE\n')
     elif tamanho in ['g', 'G'] and sabor in ['CP', 'cp']:
-        print('CUPUAÇU GRANDE')        
+        print('\nCUPUAÇU GRANDE\n')        
     break
 else:
     print('Tamanho inválido')
@@ -45,9 +51,25 @@ else:
 # acumulador para somar valores dos pedidos
 while True:
     qtd = int(input('Selecione a quantidade desejada:'))
+
+    # Multiplica pelo valor de cada tamanho
     if tamanho in ['p', 'P'] and sabor in ['AC', 'ac']:
         total = total + qtd * 11
-        print(f'Total R$ {total}')
+        print(f'\nTotal R$ {total}')
+    elif tamanho in ['m', 'M'] and sabor in ['AC', 'ac']:
+        total = total + qtd * 16
+        print(f'\nTotal R$ {total}')
+    elif tamanho in ['g', 'G'] and sabor in ['AC', 'ac']:
+        total = total + qtd * 20
+        print(f'\nTotal R$ {total}')
     break
 
 
+while True:
+    acrescentar = str(input('Deseja algo mais? (s/n):'))
+    while acrescentar in []:
+        if acrescentar == 's' or acrescentar == 'S':
+            continue
+        elif acrescentar == 'n' or acrescentar == 'N':
+            print(total)
+            break
