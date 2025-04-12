@@ -3,7 +3,7 @@ print('Bem-vindo a Loja do João Paulo Ferreira')
 
 # Loop para input de valor
 while True:
-    valor = int(input('Valor do produto R$: '))
+    valor = float(input('Valor do produto R$: '))
     if valor > 2500:
         break
     print('ERROR: Valor mínimo para desconto deve ser maior do que R$ 2500.')
