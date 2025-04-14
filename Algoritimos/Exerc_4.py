@@ -1,6 +1,6 @@
+div1 = '-' * 25
 print('Bem vindo a Livraria do Joao\n')
-menu = '-' * 10 + ' MENU ' + '-' * 15
-print(menu)
+div2 = '-' * 10 + ' MENU ' + '-' * 15
 print('\n')
 print('1 - CADASTRAR LIVRO')
 print('2 - CONSULTAR LIVRO')
@@ -61,7 +61,6 @@ while True:
         sair()
     else:
         print('Error')
-
 
 #Consultar Todos 
 

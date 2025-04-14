@@ -81,7 +81,7 @@ while True:
         if acrescentar == 's' or acrescentar == 'S':
             continue
         elif acrescentar == 'n' or acrescentar == 'N':
-            print(total)
+            print(f'Valor total a ser pago R$:{total}')
             break
     break
         
