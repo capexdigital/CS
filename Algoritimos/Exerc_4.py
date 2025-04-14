@@ -1,13 +1,6 @@
-div1 = '-' * 25
+div1 = '-' * 30
+print(div1)
 print('Bem vindo a Livraria do Joao\n')
-div2 = '-' * 10 + ' MENU ' + '-' * 15
-print('\n')
-print('1 - CADASTRAR LIVRO')
-print('2 - CONSULTAR LIVRO')
-print('3 - REMOVER LIVRO')
-print('4 - SAIR')
-
-print('\n')
 
 livro = []
 listaLivro = []
@@ -48,19 +41,31 @@ def remover_livro():
 def sair():
     print('sair')
     
+
+
+
 # Loop para escolha de opções do menu
-while True:
-    EscolhaMenu = int(input("Selecione a opção desejada:"))
-    if EscolhaMenu == 1:
-        cadastrar_livro(id_global)
-    elif EscolhaMenu == 2:
-        consultar_livro()
-    elif EscolhaMenu == 3:
-        remover_livro()
-    elif EscolhaMenu == 4:
-        sair()
-    else:
-        print('Error')
+def menu():
+    while True:
+        div1 = '-' * 30
+        print(div1)
+        print('Bem vindo a Livraria do Joao\n')
+        print('1 - CADASTRAR LIVRO')
+        print('2 - CONSULTAR LIVRO')
+        print('3 - REMOVER LIVRO')
+        print('4 - SAIR\n')
+        EscolhaMenu = int(input("Selecione a opção desejada:"))
+        if EscolhaMenu == 1:
+            cadastrar_livro(id_global)
+        elif EscolhaMenu == 2:
+            consultar_livro()
+        elif EscolhaMenu == 3:
+            remover_livro()
+        elif EscolhaMenu == 4:
+            sair()
+        else:
+            print('\nOpção inválida. Tente Novamente\n')
+menu()
 
 #Consultar Todos 
 
