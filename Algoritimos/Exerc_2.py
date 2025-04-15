@@ -27,7 +27,7 @@ while True:
         print('G - R$ 18\n')
         break
     else:
-        print('\nSabor Inválido. Tente novamente\n')
+        print('\nSabor Inválido. Digite novamente\n')
         
 # implementar if/else com cada uma das combinações de sabor e tamanho
 while True:
@@ -44,9 +44,10 @@ while True:
         print('\nAÇAI GRANDE\n')
     elif tamanho in ['g', 'G'] and sabor in ['CP', 'cp']:
         print('\nCUPUAÇU GRANDE\n')        
+        break
+    else:
+        print('\nTamanho inválido. Digite novamente\n')
     break
-else:
-    print('Tamanho inválido')
 
 # acumulador para somar valores dos pedidos
 while True:
@@ -81,7 +82,7 @@ while True:
         if acrescentar == 's' or acrescentar == 'S':
             continue
         elif acrescentar == 'n' or acrescentar == 'N':
-            print(f'Valor total a ser pago R$:{total}')
+            print('\nValor total a pagar R$: ''{:,.2f}'.format(total))
             break
     break
         
