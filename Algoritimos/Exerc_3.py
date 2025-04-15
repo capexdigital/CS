@@ -18,22 +18,23 @@ for i in range (1):
         total = DIG * num_pag
         print('\nTotal a pagar R$: ''{:,.2f}'.format(total))
     elif escolha_servico == 2:
-        #num_pag = print(int(input('Escolha o número de páginas:')))
-        print(ICO)
+        num_pag = (int(input('Escolha o número de páginas:')))
+        total = ICO * num_pag
+        print('\nTotal a pagar R$: ''{:,.2f}'.format(total))
     elif escolha_servico == 3:
-        #num_pag = print(int(input('Escolha o número de páginas:')))
-        print(IPB)
+        num_pag = (int(input('Escolha o número de páginas:')))
+        total = IPB * num_pag
+        print('\nTotal a pagar R$: ''{:,.2f}'.format(total))
     elif escolha_servico == 4:
-        #num_pag = print(int(input('Escolha o número de páginas:')))
+        num_pag = (int(input('Escolha o número de páginas:')))
         print(FOT)
+    elif num_pag > 10000:  # type: ignore
+        print('\nNão aceitamos tantas páginas de uma vez. Por favor, digite novamente\n')
     else:
         print('\nOpção Inválida. Selecione de 1 a 4\n')
         
     break
 
-if num_pag > 20000:
-        print('\nNão aceitamos tantas páginas de uma vez. Por favor, digite novamente\n')
-        
 
 def desconto():
     if num_pag < 20:
