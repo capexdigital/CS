@@ -11,7 +11,6 @@ print('\n')
 
 total = 0
 
-
 # Loop restringindo opções de escolha do usuário
 while True:
     sabor = input("Selecione o sabor desejado:")
@@ -86,5 +85,4 @@ while True:
         else:
             print('\nValor total R$: ''{:,.2f}'.format(total))
         break
-    break
-        
+    break   
