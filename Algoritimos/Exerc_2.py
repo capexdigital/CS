@@ -1,4 +1,3 @@
-# GELADOS JPF
 print('\n')
 print('Bem-vindo a Loja de Gelados do João Paulo Ferreira\n')
 menu = '-' * 10 + 'MENU' + '-' * 15
@@ -11,6 +10,7 @@ print(sabor_2)
 print('\n')
 
 total = 0
+
 
 # Loop restringindo opções de escolha do usuário
 while True:
@@ -83,6 +83,8 @@ while True:
             continue
         elif acrescentar == 'n' or acrescentar == 'N':
             print('\nValor total a pagar R$: ''{:,.2f}'.format(total))
-            break
+        else:
+            print('\nValor total R$: ''{:,.2f}'.format(total))
+        break
     break
         
