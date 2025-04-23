@@ -1,4 +1,4 @@
-# Lista para armazenar todos os livros cadastrados
+# Lista para armazenar livros cadastrados
 lista_livros = []
 
 # Variável para gerar IDs
@@ -21,10 +21,11 @@ def cadastrar_livro():
     lista_livros.append(livro)
     
     # Confirmação do cadastro com o ID
-    print(f"Livro cadastrado com sucesso! ID: {id_global}")
-    if input('Cadastrar outro? [S/N]').upper() == 'S':
+    resposta = input('Cadastrar outro? [S/N]').upper()
+    if resposta == 'S':
         cadastrar_livro()
-    elif input('Cadastrar outro? [S/N]').upper() == 'N':
+    elif resposta == 'N':
+        print(lista_livros)
         menu()
     else:
         print('ERROR')
