@@ -11,58 +11,63 @@ print('2 - Impressão Colorida')
 print('3 - Impressão Preto e Branco')
 print('4 - Fotocópia\n')
 
-for i in range (1):
+# Escolha serviço
+while True:
     escolha_servico = int(input('Escolha o serviço desejado:'))
-    if escolha_servico == 1:
-        num_pag = (int(input('Escolha o número de páginas:')))
-        total = DIG * num_pag
-        print('\nTotal a pagar R$: ''{:,.2f}'.format(total))
-    elif escolha_servico == 2:
-        num_pag = (int(input('Escolha o número de páginas:')))
-        total = ICO * num_pag
-        print('\nTotal a pagar R$: ''{:,.2f}'.format(total))
-    elif escolha_servico == 3:
-        num_pag = (int(input('Escolha o número de páginas:')))
-        total = IPB * num_pag
-        print('\nTotal a pagar R$: ''{:,.2f}'.format(total))
-    elif escolha_servico == 4:
-        num_pag = (int(input('Escolha o número de páginas:')))
-        print(FOT)
-    elif num_pag > 10000:  # type: ignore
-        print('\nNão aceitamos tantas páginas de uma vez. Por favor, digite novamente\n')
+    if escolha_servico in (1, 2, 3, 4):
+        break
     else:
         print('\nOpção Inválida. Selecione de 1 a 4\n')
-        
-    break
 
+# Escolha número de páginas
+while True:
+    num_pag = int(input('Escolha o número de páginas:'))
+    if num_pag > 10000:
+        print('\nNão aceitamos tantas páginas de uma vez. Por favor, digite novamente\n')
+    else:
+        break
 
-def desconto():
-    if num_pag < 20:
-        print('Desconto apenas para pedidos acima de 20 páginas.')
-    if num_pag >= 20 and num_pag < 200:
-        print ('Desconto de 15% aplicado.')
-        return num_pag * 0.85
-    elif num_pag >= 200 and num_pag < 2000:
-        print ('Desconto de 20% aplicado.')
-        return num_pag * 0.80
-    elif num_pag >= 2000 and num_pag < 20000:
-        print ('Desconto de 25% aplicado.')
-        return num_pag * 0.75
-    else: num_pag > 20000
-    print ('Desconto de 15% aplicado.')
+# Cálculo do valor base
+if escolha_servico == 1:
+    total = DIG * num_pag
+elif escolha_servico == 2:
+    total = ICO * num_pag
+elif escolha_servico == 3:
+    total = IPB * num_pag
+elif escolha_servico == 4:
+    total = FOT * num_pag
 
-# Tabela de adicionais
-def extra():
-    print('Escolha seu adicional')
-    print('0 - Sem Adicionais')
-    print('1 - Encadernação Simples')
-    print('2 - Encadernação Capa Dura')
+# Aplicar desconto
+if num_pag < 20:
+    print('\nDesconto apenas para pedidos acima de 20 páginas.\n')
+elif 20 <= num_pag < 200:
+    print('Desconto de 15% aplicado.')
+    total *= 0.85
+elif 200 <= num_pag < 2000:
+    print('Desconto de 20% aplicado.')
+    total *= 0.80
+elif 2000 <= num_pag < 20000:
+    print('Desconto de 25% aplicado.')
+    total *= 0.75
 
-    #adc0 = num_pag + 0 # Sem adicionais
-    #adc1 = num_pag + 15 # Encadernação Simples 
-    #adc2 = num_pag + 40 # Encadernação Capa Dura
+# Adicionais
+print('\nEscolha seu adicional\n')
+print('0 - Sem Adicionais')
+print('1 - Encadernação Simples - R$ 15.00')
+print('2 - Encadernação Capa Dura - R$ 40.00')
 
-# Calcular valor final
-#total = (servico * num_pag) + taxa
+while True:
+    adicional = int(input('\nDeseja acrescentar algum adicional?:'))
+    if adicional == 0:
+        break
+    elif adicional == 1:
+        total += 15
+        break
+    elif adicional == 2:
+        total += 40
+        break
+    else:
+        print('Opção inválida. Escolha 0, 1 ou 2.')
 
-
+# Valor final
+print(f'\nTotal a pagar: R$ {total:.2f}')
