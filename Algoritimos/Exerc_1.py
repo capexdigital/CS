@@ -13,7 +13,7 @@ total_sem_desconto = valor * quantidade
 
 # Função para aplicar desconto
 def desconto(valor):
-    if valor < 2500:
+    if valor <= 2500:
         return valor 
     elif 2500 <= valor < 6000:
         print('Desconto de 4% aplicado.')
@@ -29,7 +29,7 @@ def desconto(valor):
         return valor 
     
 
-# Aplico o desconto no valor armazenando em outra variável
+# Aplica desconto no valor armazenando-o em outra variável
 valor_com_desconto = desconto(valor)
 
 # Calcular total com desconto
