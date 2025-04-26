@@ -67,7 +67,7 @@ while True:
         total += 40
         break
     else:
-        print('Opção inválida. Escolha 0, 1 ou 2.')
+        print('\nOpção inválida. Escolha 0, 1 ou 2.')
 
 # Valor final
 print(f'\nTotal a pagar: R$ {total:.2f}')

@@ -85,4 +85,5 @@ while True:
         else:
             print('\nValor total R$: ''{:,.2f}'.format(total))
         break
-    break   
+    break 
+  
