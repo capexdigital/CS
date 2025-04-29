@@ -5,8 +5,7 @@ lista_livros = []
 id_global = 0
 
 # Função para cadastrar um novo livro
-def cadastrar_livro():
-    global id_global
+def cadastrar_livro(id_global):
     id_global += 1
     
     # Cria um dicionário com os dados do livro
@@ -23,12 +22,12 @@ def cadastrar_livro():
     # Confirmação do cadastro com o ID
     resposta = input('Cadastrar outro? [S/N]').upper()
     if resposta == 'S':
-        cadastrar_livro()
+        cadastrar_livro(id_global)
     elif resposta == 'N':
         print(lista_livros)
         menu()
     else:
-        print('ERROR')
+        print('\nERROR! Resposta inválida. Tente novamente.')
 
 # Função para consultar livros
 def consultar_livro():
@@ -47,12 +46,12 @@ def consultar_livro():
             if livro['id'] == id_busca:
                 print(f"\nNome: {livro['nome']}\nAutor: {livro['autor']}\nEditora: {livro['editora']}")
                 return  
-        print("Livro não encontrado!")
+        print("\nLivro não encontrado!")
     
     elif opcao == 3:
-        autor = input("Autor: ")
+        autor = str(input("Autor: "))
         for livro in lista_livros:
-            if livro['autor'] == autor.lower():
+            if livro['autor'] in autor:
                 print(f"\nID: {livro['id']} | Nome: {livro['nome']}")
 
 # Função para remover livro
@@ -63,7 +62,7 @@ def remover_livro():
     for i, livro in enumerate(lista_livros):
         if livro['id'] == id_remover:
             lista_livros.pop(i)  # Remove o livro da lista
-            print("Livro removido!")
+            print("\nLivro removido!")
             return
     print("ID não encontrado!")
 
@@ -78,7 +77,7 @@ def menu():
         opcao = input("Opção: ")
         
         if opcao == '1': 
-            cadastrar_livro()
+            cadastrar_livro(id_global)
         elif opcao == '2': 
             consultar_livro()
         elif opcao == '3': 
@@ -86,7 +85,8 @@ def menu():
         elif opcao == '4': 
             break
         else: 
-            print("Opção inválida!") 
+            print("\nOpção inválida. Tente novamente.") 
 
 # Inicia o programa
 menu()
+
