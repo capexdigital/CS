@@ -35,6 +35,7 @@
     - Pode incluir matérias-primas, peças intermediárias, quantidades e até instruções de montagem.
 
   - **3ª geração**: sistemas integrados (ERP, CRM, SCM).
+  
     **ERP – Enterprise Resource Planning**
     - Sistema integrado que gerencia todas as áreas da empresa: finanças, RH, produção, vendas, estoques etc.
     - Exemplo: SAP, Oracle ERP, TOTVS.
