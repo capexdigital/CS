@@ -35,7 +35,7 @@
     - Pode incluir matérias-primas, peças intermediárias, quantidades e até instruções de montagem.
 
   - **3ª geração**: sistemas integrados (ERP, CRM, SCM).
-    - **ERP – Enterprise Resource Planning**
+    **ERP – Enterprise Resource Planning**
     - Sistema integrado que gerencia todas as áreas da empresa: finanças, RH, produção, vendas, estoques etc.
     - Exemplo: SAP, Oracle ERP, TOTVS.
 
@@ -45,10 +45,7 @@
     **SCM – Supply Chain Management**
     - Sistema que acompanha o fluxo de insumos, materiais e produtos ao longo da cadeia: fornecedor → produção → distribuição → cliente.
 
-
-
-
-  - **CRM – Customer Relationship Management**
+  
 
 ## 5. História da Computação
 - Década de 1940: Alan Turing cria máquina capaz de processar informações (quebra de códigos nazistas).
