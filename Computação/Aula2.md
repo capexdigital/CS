@@ -13,7 +13,7 @@
 **Placa-mãe**
 - Conecta todos os componentes: processador, memórias, armazenamento, entradas e saídas.
 - Contém trilhas de cobre para passagem de dados e energia.
-- Possui slots para placas adicionais, como a de vídeo.
+- Possui slots para placas adicionais, como a de vídeo.(GPU)
 - Inclui um chip com bateria que mantém o relógio funcionando quando o PC está desligado.
 
 **Memórias Voláteis**
@@ -25,7 +25,6 @@
 - Armazenam dados mesmo sem energia elétrica.
 - **HDD**: disco magnético mais barato e com mais capacidade, porém mais lento.
 - **SSD**: mais rápido, sem partes móveis, mais caro.
-- **Pendrive**: similar ao SSD, mas mais simples e usado para transporte de dados.
 
 **2. Bits e Bytes**
 
@@ -48,7 +47,6 @@
 - Conjunto de fios e trilhas que conectam os componentes internos do computador.
 - Transmitem dados, endereços e sinais de controle.
 - Quanto maior o número de bits do barramento, mais dados podem ser processados simultaneamente.
-- Exemplo: barramento de 64 bits permite acesso a grandes quantidades de memória.
 
 **Tipos de barramento**
 - **PCI**: barramento padrão para placas adicionais.
