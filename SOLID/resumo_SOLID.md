@@ -1,4 +1,4 @@
-# Princípios SOLID (Explicado para Iniciantes)
+# Princípios SOLID
 
 Os princípios SOLID ajudam a escrever código mais limpo, organizado, reutilizável e fácil de manter. Eles são muito usados na Programação Orientada a Objetos.
 
@@ -52,14 +52,12 @@ Os princípios SOLID ajudam a escrever código mais limpo, organizado, reutiliz�
 - Ajuda a **desacoplar as partes do sistema**.
 - É um dos princípios base do conceito de **arquitetura limpa**.
 
----
+---------------------------------------------
 
-## Conclusão
-
-Os princípios SOLID ajudam você a escrever um código:
+Os princípios **SOLID** ajudam a escrever um código:
 
 - Mais limpo.
 - Mais fácil de manter.
 - Mais organizado.
+- Escalável
 - Com menos bugs.
-- Preparado para crescer sem virar uma bagunça.
