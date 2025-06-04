@@ -78,4 +78,4 @@
 
 ### 8.3 Sustentabilidade
 - Computadores consomem muita energia e geram lixo eletrônico.
-- Sustentabilidade computacional envolve fatores ecológicos, sociais e econômicos.
+- Sustentabilidade computacional envolve fatores ecológicos, sociais e econômicos. 
