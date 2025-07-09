@@ -29,10 +29,10 @@ try:
     driver.find_element(By.XPATH, '//*[@id="user_login"]').send_keys(USERNAME)
     driver.find_element(By.XPATH, '//*[@id="user_pass"]').send_keys(PASSWORD)
     driver.find_element(By.ID, "wp-submit").click()
-    time.sleep(2)
+    time.sleep(1)
 
     driver.get("https://portaldaeconomia.com/")
-    time.sleep(2)
+    time.sleep(1)
 
     menu = driver.find_element(By.XPATH, '//*[@id="wp-admin-bar-autoptimize"]/a/span[2]')
     ActionChains(driver).move_to_element(menu).perform()
@@ -40,7 +40,7 @@ try:
 
     item = driver.find_element(By.XPATH, '//*[@id="wp-admin-bar-autoptimize-delete-cache"]/div')
     item.click()
-    time.sleep(2)
+    time.sleep(1)
 
 finally:
     driver.quit()

@@ -1,4 +1,3 @@
-# Testing exceptions
 import pytest
 
 def test_divide_by_zero():

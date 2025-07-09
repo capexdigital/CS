@@ -52,7 +52,7 @@ Os princípios SOLID ajudam a escrever código mais limpo, organizado, reutiliz�
 - Ajuda a **desacoplar as partes do sistema**.
 - É um dos princípios base do conceito de **arquitetura limpa**.
 
----------------------------------------------
+------------------------------------------------
 
 Os princípios **SOLID** ajudam a escrever um código:
 
