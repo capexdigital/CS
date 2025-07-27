@@ -31,9 +31,6 @@ try:
     driver.find_element(By.ID, "wp-submit").click()
     time.sleep(1)
 
-    driver.get("https://portaldaeconomia.com/")
-    time.sleep(1)
-
     menu = driver.find_element(By.XPATH, '//*[@id="wp-admin-bar-autoptimize"]/a/span[2]')
     ActionChains(driver).move_to_element(menu).perform()
     time.sleep(1)
