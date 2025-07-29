@@ -2,7 +2,10 @@
 
 int main() {
 
-    printf("HELLO WORLD!");
+    char input[100];
+
+    printf("username:");
+    scanf("%99s", input);
 
 return 0;
 }
