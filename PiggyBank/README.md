@@ -36,3 +36,11 @@ Funcionamento Esperado
 5. O programa mostra o total em Reais
 
 ---
+
+* Herança (Real/Dolar/Euro extendem Moeda)
+
+* Polimorfismo (List<Moeda> pode ter qualquer subtipo)
+
+* Classes abstratas (Moeda é abstract)
+
+* Coleções (ArrayList<Moeda>)
