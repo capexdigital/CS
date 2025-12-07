@@ -44,3 +44,72 @@ Funcionamento Esperado
 * Classes abstratas (Moeda é abstract)
 
 * Coleções (ArrayList<Moeda>)
+
+**TUTORIAL**
+
+WINDOWS
+1. Extrair ZIP
+   
+   
+    C:\Users\Exemplo\Documents\PiggyBank
+
+
+2. Entrar na pasta source rodando o comando no powershell
+   
+
+    cd C:\PiggyBank\source
+
+
+3. Compilar o projeto
+
+   
+    javac *.java
+
+   * Se aparecer erro "javac não é reconhecido", instale o Java:
+
+
+4. Rodar
+
+
+    java Main
+
+   
+LINUX
+
+1. Extrair zip usando bash
+
+
+    unzip PiggyBank.zip
+
+   * se estiver em /Downloads
+   
+
+     cd ~/Downloads
+     unzip PiggyBank.zip -d ~/PiggyBank
+
+isso criará 
+
+    ~/PiggyBank/source/*.java
+
+2. acessar a pasta do código fonte
+
+    
+    cd ~/PiggyBank/source
+
+3. Compilar
+
+
+    javac source/*.java
+
+
+4. Rodar
+
+
+    java source.Main
+
+
+
+    
+
+
+
