@@ -1,89 +1,90 @@
-print('\n')
-print('Bem-vindo a Loja de Gelados do João Paulo Ferreira\n')
-menu = '-' * 10 + 'MENU' + '-' * 15
-print(menu)
-print('\n')
-sabor_1 = '-' * 2 + '[AC]-Açaí' + '-' * 18
-print(sabor_1)
-sabor_2 =  '-' * 2 + '[CP]-Cupuaçu' + '-' * 15
-print(sabor_2)
-print('\n')
+PRECOS = {
+    ('ac', 'p'): 11,
+    ('ac', 'm'): 16,
+    ('ac', 'g'): 20,
+    ('cp', 'p'): 9,
+    ('cp', 'm'): 14,
+    ('cp', 'g'): 18,
+}
 
-total = 0
+NOMES_SABOR = {'ac': 'Açaí', 'cp': 'Cupuaçu'}
+NOMES_TAMANHO = {'p': 'Pequeno', 'm': 'Médio', 'g': 'Grande'}
 
-# Loop restringindo opções de escolha do usuário
-while True:
-    sabor = input("Selecione o sabor desejado:")
-    if (sabor == 'AC' or sabor == 'ac'):
-        print('\nP - R$ 11')
-        print('M - R$ 16')
-        print('G - R$ 20\n')
-        break
-    
-    elif (sabor == 'CP' or sabor == 'cp'):
-        print('\nP - R$ 9')
-        print('M - R$ 14')
-        print('G - R$ 18\n')
-        break
-    else:
-        print('\nSabor Inválido. Digite novamente\n')
-        
-# implementar if/else com cada uma das combinações de sabor e tamanho
-while True:
-    tamanho = input("Selecione o tamanho desejado:")
-    if tamanho in ['p', 'P'] and sabor in ['AC', 'ac']:
-        print('\nAÇAI PEQUENO\n')
-    elif tamanho in ['p', 'P'] and sabor in ['CP', 'cp']:
-        print('\nCUPUAÇU PEQUENO\n')
-    elif tamanho in ['m', 'M'] and sabor in ['AC', 'ac']:
-        print('\nAÇAI MÉDIO\n')
-    elif tamanho in ['m', 'M'] and sabor in ['CP', 'cp']:
-        print('\nCUPUAÇU MÉDIO\n')
-    elif tamanho in ['g', 'G'] and sabor in ['AC', 'ac']:
-        print('\nAÇAI GRANDE\n')
-    elif tamanho in ['g', 'G'] and sabor in ['CP', 'cp']:
-        print('\nCUPUAÇU GRANDE\n')        
-        break
-    else:
-        print('\nTamanho inválido. Digite novamente\n')
-    break
 
-# acumulador para somar valores dos pedidos
-while True:
-    qtd = int(input('Selecione a quantidade desejada:'))
+def preco_unitario(sabor, tamanho):
+    """Retorna o preço unitário para um sabor e tamanho, ou None se inválido."""
+    sabor = sabor.lower()
+    tamanho = tamanho.lower()
+    return PRECOS.get((sabor, tamanho))
 
-    # Tabela de valores açai
-    if tamanho in ['p', 'P'] and sabor in ['AC', 'ac']:
-        total = total + qtd * 11
-        print(f'\nTotal R$ {total}')
-    elif tamanho in ['m', 'M'] and sabor in ['AC', 'ac']:
-        total = total + qtd * 16
-        print(f'\nTotal R$ {total}')
-    elif tamanho in ['g', 'G'] and sabor in ['AC', 'ac']:
-        total = total + qtd * 20
-        print(f'\nTotal R$ {total}')
-        
-    # Tabela de valores cupuaçu
-    elif tamanho in ['p', 'P'] and sabor in ['CP', 'cp']:
-        total = total + qtd * 9
-        print(f'\nTotal R$ {total}')
-    elif tamanho in ['m', 'M'] and sabor in ['CP', 'cp']:
-        total = total + qtd * 14
-        print(f'\nTotal R$ {total}')
-    elif tamanho in ['g', 'G'] and sabor in ['CP', 'cp']:
-        total = total + qtd * 18
-        print(f'\nTotal R$ {total}')
-    break
 
-while True:
-    acrescentar = str(input('Deseja algo mais? (s/n):'))
-    while acrescentar in ['s','n' or 'S','N']:
-        if acrescentar == 's' or acrescentar == 'S':
-            continue
-        elif acrescentar == 'n' or acrescentar == 'N':
-            print('\nValor total a pagar R$: ''{:,.2f}'.format(total))
+def calcular_valor_pedido(sabor, tamanho, quantidade):
+    """Calcula o valor de um pedido. Levanta ValueError se sabor/tamanho for inválido."""
+    preco = preco_unitario(sabor, tamanho)
+    if preco is None:
+        raise ValueError(f'Combinação inválida: sabor={sabor}, tamanho={tamanho}')
+    return preco * quantidade
+
+
+def descricao_pedido(sabor, tamanho):
+    """Retorna a descrição legível do pedido, ex: 'Açaí Pequeno'."""
+    sabor_nome = NOMES_SABOR.get(sabor.lower())
+    tamanho_nome = NOMES_TAMANHO.get(tamanho.lower())
+    if sabor_nome is None or tamanho_nome is None:
+        raise ValueError(f'Combinação inválida: sabor={sabor}, tamanho={tamanho}')
+    return f'{sabor_nome} {tamanho_nome}'
+
+
+def escolher_sabor():
+    while True:
+        sabor = input('Selecione o sabor desejado (AC/CP): ').strip().lower()
+        if sabor == 'ac':
+            print('\nP - R$ 11')
+            print('M - R$ 16')
+            print('G - R$ 20\n')
+            return sabor
+        elif sabor == 'cp':
+            print('\nP - R$ 9')
+            print('M - R$ 14')
+            print('G - R$ 18\n')
+            return sabor
         else:
-            print('\nValor total R$: ''{:,.2f}'.format(total))
-        break
-    break 
-  
+            print('\nSabor inválido. Digite novamente\n')
+
+
+def escolher_tamanho(sabor):
+    while True:
+        tamanho = input('Selecione o tamanho desejado (P/M/G): ').strip().lower()
+        if tamanho in ('p', 'm', 'g'):
+            print(f'\n{descricao_pedido(sabor, tamanho).upper()}\n')
+            return tamanho
+        else:
+            print('\nTamanho inválido. Digite novamente\n')
+
+
+def main():
+    print('\nBem-vindo a Loja de Gelados do João Paulo Ferreira\n')
+    menu = '-' * 10 + 'MENU' + '-' * 15
+    print(menu)
+    print('\n' + '-' * 2 + '[AC]-Açaí' + '-' * 18)
+    print('-' * 2 + '[CP]-Cupuaçu' + '-' * 15 + '\n')
+
+    total = 0
+
+    while True:
+        sabor = escolher_sabor()
+        tamanho = escolher_tamanho(sabor)
+        qtd = int(input('Selecione a quantidade desejada: '))
+
+        total += calcular_valor_pedido(sabor, tamanho, qtd)
+        print(f'\nTotal parcial: R$ {total:,.2f}')
+
+        acrescentar = input('Deseja algo mais? (s/n): ').strip().lower()
+        if acrescentar != 's':
+            break
+
+    print('\nValor total a pagar: R$ {:,.2f}'.format(total))
+
+
+if __name__ == "__main__":
+    main()
