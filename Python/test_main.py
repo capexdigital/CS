@@ -1,6 +1,6 @@
 import pytest
 
-from Exerc_1 import desconto
+from Exerc_1 import total_sem_desconto, total_com_desconto
 from Exerc_2 import preco_unitario, calcular_valor_pedido, descricao_pedido
 from Exerc_3 import calcular_valor_base, aplicar_desconto, aplicar_adicional, calcular_total
 from Exerc_4 import cadastrar_livro, buscar_por_id, buscar_por_autor, remover_livro, resetar
@@ -31,7 +31,6 @@ class TestExerc1:
 
     def test_desconto_11_porcento(self):
         assert desconto(15000) == pytest.approx(15000 * 0.89)
-
 
 # ---------------------------------------------------------------------------
 # Exerc_2 - Loja de gelados (sabor/tamanho)
