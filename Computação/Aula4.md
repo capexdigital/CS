@@ -79,3 +79,4 @@
 - Manter coerência visual
 - Adequar ao contexto e público-alvo
 - Equilibrar informação e estética
+

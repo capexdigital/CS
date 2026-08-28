@@ -2,7 +2,7 @@
 
 ## 1. Conceitos Iniciais
 - A computação estuda o uso de sistemas automatizados para tratar informações.
-- **Informática** significa “informação automática” — uso de máquinas para automatizar o processamento de dados.
+- **Informática** significa “informação automática” — uso de máquinas para automatizar o processamento de dados. 
 
 ## 2. Hardware (HW)
 - Parte física dos computadores.
